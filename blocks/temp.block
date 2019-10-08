@@ -1,0 +1,383 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {.if template.mobileStylesEnabled}<meta name="viewport" content="width=device-width,initial-scale=1">{.end}
+    {squarespace-headers}
+    <squarespace:script src="site-bundle.js" combo="false" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" combo="false"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" combo="false"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" combo="false"></script>
+    {#  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  }
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Palanquin:100">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,600">
+  </head>
+  {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}{.section collection}{.background-source-video?}{.or} has-main-image{.section mainImage} has-main-image{.end}{.end}{.end}{.section website}{.if logoImageUrl} logo-image{.end}{.location?} has-location{.end}{.if siteDescription} has-description{.end}{.end}{.section websiteSettings}{.if contactPhoneNumber} has-phone-number{.end}{.section contactEmail} has-email{.end}{.end}">
+    <div class="opacity-overlay"></div>
+    <div class="outer-wrapper">
+      <div class="wrapper cf">
+        <header id="header">
+          <div class = "container">
+            <div class ="row row-eq-height vertical-bottom">
+              <div class = "col-md-4 col-sm-12 vertical-bottom horizontal-left hidden-xs">
+                {.section website}
+                  <img src="/assets/imgs/Swissmanufacture-latinHeritage_header.png" class="img-responsive" title="Swiss manufacture, latin heritage" alt="Swiss manufacture, latin heritage">
+                {.end}
+              </div>
+              <div class = "col-md-4 col-sm-12 horizontal-center">
+                {.section website}
+                  {.section logoImageUrl}
+                    <div class="logo-wrapper">
+                      <a href="/" class="home-link">
+                        <img class="img-responsive" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" class="logo" />
+                      </a>
+                    </div>
+                    <div class="icon-hamburger">
+                      <button type="button" class="navbar-toggle collapsed btn-toggle" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false"> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="sr-only">Toggle navigation</span>
+                      </button>
+                      <span>MENU</span>
+                    </div>
+                  {.end}
+                {.end}
+              </div>
+              <div class = "col-md-4 col-sm-12 vertical-bottom horizontal-right hidden-xs">
+                <div id="header-top" class="clearcont"> 
+                    <div class="header-social">
+                    <div class="socialmediaicons">
+                      <a href="https://www.facebook.com/CuervoySobrinosOfficial" target="_blank" class="fa fa-facebook"></a>
+                      <a href="https://twitter.com/CYSswisswatches" target="_blank" class="fa fa-twitter"></a>
+                      <a href="https://www.instagram.com/cuervoysobrinos/" target="_blank" class="fa fa-instagram"></a>
+                      <a href="https://it.pinterest.com/cuervoysobrinos/" target="_blank" class="fa fa-pinterest"></a>
+                      <a href="https://www.youtube.com/channel/UCs6ily3K4EPDZj2mZzYzMRQ" target="_blank" class="fa fa-youtube"></a>
+                    </div>
+                    </div>
+                    <div id="navlistheader">
+                      <ul class="nav navbar-nav">
+                        <li class="nav-item last">
+                          <a class="nav-link" href="/en/news-2/contact-us.html">Contact us</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+            </div>            
+          </div>
+          <div class="bg-rosso">
+          </div>
+          <!--MAIN NAVIGATION-->
+          <nav id="main-navigation" class="main-nav collapse navbar-collapse">            
+            <squarespace:navigation navigationId="mainNav" template="navigation" />
+          </nav>
+        </header>
+        <!--CONTENT INJECTION POINT-->
+        <section id="content">
+          {.if item}
+            {.section item}
+              {.main-image?}
+                <div class="main-image-wrapper">
+                  <div class="main-image content-fill" data-item-id="{id}" data-content-field="main-image">
+                    <img {@|image-meta} />
+                  </div>
+                </div>
+              {.end}
+            {.end}
+          {.or}
+            {.section collection}
+              {.equal? typeName "album"}
+                {.background-source-video?}
+                  <div class="main-image-wrapper">
+                    <div class="main-image content-fill" data-item-id="{id}" data-content-field="main-image">
+                      {@|apply sqs-video-background.block}
+                    </div>
+                  </div>
+                {.or}
+                  {.main-image?}
+                    {.section mainImage}
+                    <div class="main-image-wrapper" data-collection-id="{collection.id}" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+                      <div class="main-image content-fill" data-collection-id="{id}" data-content-field="main-image">
+                        <img {@|image-meta} />
+                      </div>
+                    </div>
+                    {.end}
+                  {.end}
+                {.end}
+              {.or}
+              {.equal? typeName "gallery"}
+              {.or}
+                {.background-source-video?}
+                  <div class="main-image-wrapper">
+                    <div class="main-image content-fill" data-item-id="{id}" data-content-field="main-image">
+                      {@|apply sqs-video-background.block}
+                    </div>
+                  </div>
+                {.or}
+                  {.main-image?}
+                    {.section mainImage}
+                    <div class="main-image-wrapper" data-collection-id="{collection.id}" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+                      <div class="main-image content-fill" data-collection-id="{id}" data-content-field="main-image">
+                        <img {@|image-meta} />
+                      </div>
+                    </div>
+                    {.end}
+                  {.end}
+                {.end}
+              {.end}
+            {.end}
+          {.end}
+        {.end}
+        {#  <squarespace:folder-navigation template="foldernav" />  }
+
+        {.section collection}{.equal? typeName "products"}{.section categories}
+          <div id="categoryNav">
+            <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
+            <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
+            <nav class="category-nav">
+              <ul class="category-nav-links">
+                <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
+                <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
+                {.repeated section @}
+                  <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
+                {.end}
+              </ul>
+            </nav>
+          </div>
+          {.end}
+          {.end}
+        {.end}
+          <div class="content-inner-wrapper">
+            {.section collection}{.equal? typeName "album"}
+              {.or}
+                {.if description || title}<div class="collection-title-desc" data-collection-id="{id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+                  <div class="collection-title-basic">
+                    <h1 class="page-title">{title}</h1>
+                  </div>
+                  {.if description}
+                  <div class="collection-desc">{description}
+                  </div>
+                  {.end}
+                {.end}
+                </div>
+              {.end}
+            {.end}
+            <div class="main-content-wrapper" data-content-field="main-content" data-collection-id="{collection.id}" {.equal? collection.typeName "gallery"}{.or}{.equal? collection.typeName "album"}{.or}data-edit-main-image="Banner"{.end}{.end}>
+              {squarespace.main-content}
+            </div>
+          </div>
+        </section>
+      </div>
+{#  
+      <squarespace:navigation navigationId="footerNav" template="footernav" />
+      <squarespace:block-field id="footerBlockLeft" columns="1" label="Left Footer Content" />
+      <squarespace:block-field id="footerBlockRight" columns="1" label="Right Footer Content" />  }
+
+      <footer id="footer" class="cf">
+        <div id="footer-top" class="row">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-2">
+                  &nbsp
+              </div>
+              <div class="col-md-6 col-sm-10">
+                <ul class="nav-orizz list-unstyled" id="footer-navtop">
+                  {#  <li>
+                    <a href="/press-area">Press Area</a>
+                  </li>
+                  <li>
+                    <a href="/entra">Reserved Area</a>
+                  </li>  }
+                  <li>
+                    <a href="/warranty-activation">Warranty Activation</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cont-address-footer">
+          <div class="container">
+            <div id="row-parent" class="row">
+              <div class="col-lg-9 col-md-12 col-sm-12 colonna-footer hidden-xs">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="heading">
+                      <h5>Collections</h5>
+                      <ul class="liv1 nav navbar-nav" id="footer-collections">
+                        <li>
+                          <a href="/historiador">Historiador</a>
+                        </li>
+                        <li>
+                          <a href="/ladies-timepieces">Ladies Timepieces</a>
+                        </li>
+                        <li>
+                          <a href="/prominente">Prominente</a>
+                        </li>
+                        <li>
+                          <a href="/robusto">Robusto</a>
+                        </li>
+                        <li>
+                          <a href="/torpedo">Torpedo</a>
+                        </li>
+                        <li class="active">
+                          <a href="/special-collection">Special Collection</a>
+                        </li>
+                        <li>
+                          <a href="/easyStore/index.asp?CategoriaCOD=00300D">Writing Instruments</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="heading">
+                      <h5>Company</h5>
+                    </div>
+                    <ul class="liv1 nav navbar-nav">
+                      <li>
+                        <a class="nav-link" href="/manufacture">Manufacture</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/swiss-savoirfaire">Swiss Savoir-Faire</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/la-havana-s-exclusive-shop-museum">La Havana’ s exclusive Shop Museum</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/our-history">Our history</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/luxurious-humidor">Luxurious Humidor</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="heading">
+                      <h5>Retail &amp; Services</h5>
+                    </div>
+                    <ul class="liv1 nav navbar-nav">
+                      <li>
+                        <a class="nav-link" href="/store-locator">Store locator</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/warranty-activation">Warranty activation</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="/contact">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-8 col-sm-12 colonna-footer">
+                <div class="row clearcont margin-bottom-20">
+                  <div id="footer-social" class="col-xl-5 col-lg-12 col-sm-5">
+                    <h5>Follow us</h5>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-sm-7">
+                    <div class="socialmediaicons">
+                      <a href="https://www.facebook.com/CuervoySobrinosOfficial" target="_blank" class="fa fa-facebook"></a>
+                      <a href="https://twitter.com/CYSswisswatches" target="_blank" class="fa fa-twitter"></a>
+                      <a href="https://www.instagram.com/cuervoysobrinos/" target="_blank" class="fa fa-instagram"></a>
+                      <a href="https://it.pinterest.com/cuervoysobrinos/" target="_blank" class="fa fa-pinterest"></a>
+                      <a href="https://www.youtube.com/channel/UCs6ily3K4EPDZj2mZzYzMRQ" target="_blank" class="fa fa-youtube"></a>
+                    </div>
+                  </div>
+                </div>
+                {#  <div id="footer-newsletter" class="row clearcont">
+                  <div class="col-xl-3 col-lg-5 col-sm-5">
+                    <h5>Newsletter</h5>
+                  </div>
+                  <div class="col-xl-9 col-lg-7 col-sm-7"> 
+                    <form id="FrmNewsLetterFtr" class="form-horizontal" name="FrmNewsLetterFtr" method="post" action="/en/news-42/newsletter.html">
+                      <div class="form-group">
+                        <input placeholder="Your Email Address" name="email" class="form-control" type="text">
+                        <button id="btn-newsletter" class="btn btn-default" type="submit">Subscribe </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>  }
+                <div id="footer-warranty" class="row clearcont">
+                  <div class="col-xl-1 col-lg-1 col-sm-5">
+                  </div>
+                  <div class="col-xl-11 col-lg-11 col-sm-7">
+                  <button id="btn-warranty" class="btn btn-default" type="button" onclick="goToURL('parent','/easynews/newsleggi.asp?newsid=14');return false">
+                    Warranty Activation 
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9 clearcont"> 
+                <div id="navlist" role="navigation" class="noprint">
+                  <ul class="nav-orizz"><li>©CUERVO Y SOBRINOS. All rights Reserved</li>
+                    <li>
+                      <a href="/">Home Page</a>
+                    </li>
+                    {#  <li>
+                      <a rel="nofollow" title="" data-toggle="tooltip" href="/entra" data-original-title="Accesso Area Riservata">Reserved Area</a>
+                    </li>  }
+                    <li>
+                      <a href="/siteMap">SiteMap</a>
+                    </li> 
+                    <li>
+                      <a href="https://www.iubenda.com/privacy-policy/24622221/cookie-policy" class="iubenda-nostyle iubenda-embed " title="Cookie Policy">Cookie Policy</a>
+                      <script type="text/javascript" src="https://cdn.iubenda.com/iubenda_i_badge.js"></script>
+                      <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                    </li> 
+                    <li>
+                      <a href="https://www.iubenda.com/privacy-policy/24622221" class="iubenda-nostyle iubenda-embed " title="Privacy Policy">Privacy Policy</a>
+                      <script type="text/javascript" src="https://cdn.iubenda.com/iubenda_i_badge.js"></script>
+                      <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                    </li> 
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" title="Top" class="btn btn-xs btn-primary pull-right scroll-top noprint">
+                  <i class="fa fa-angle-up"></i>
+                </button>
+                <div id="credits" class="noprint">
+                  <a href="https://www.aldersoft.com" target="_blank">
+                    <img src="/assets/imgs/CreditsGrigio.png" alt="powered by aldersoft.com" title="powered by aldersoft.com" width="106" height="10">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--INJECTION POINT FOR TRACKING SCRIPTS AND USER CONTENT FROM THE CODE INJECTION TAB-->
+    {squarespace-footers}
+
+    {.if template.mobileStylesEnabled}{.or}
+      <script>
+        Y.use('node', function() {
+          Y.on('domready', function() {
+            var move;
+            Y.all('.folder-child a').each(function(a) {
+              a.on('touchstart', function() {
+                move = false;
+              });
+              a.on('touchmove', function() {
+                move = true;
+              });
+              a.on('touchend', function() {
+                if (move === false) {
+                  window.location = a.getAttribute('href');
+                }
+              });
+            });
+          });
+        });
+      </script>
+    {.end}
+  </body>
+</html>
